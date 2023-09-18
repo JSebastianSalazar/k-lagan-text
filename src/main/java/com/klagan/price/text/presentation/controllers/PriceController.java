@@ -33,6 +33,6 @@ public class PriceController {
 
         return priceService.getPrice(brandId, productId, applicationDate, currency)
                 .map(ResponseEntity::ok)
-                .defaultIfEmpty(ResponseEntity.ok().build());
+                .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 }
